@@ -1,0 +1,9 @@
+
+
+to do
+
+if add button pressed with no input text then ignore
+
+correct link format check 
+
+add responsiveness for mobile

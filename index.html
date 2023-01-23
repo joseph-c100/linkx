@@ -16,13 +16,15 @@
             <div class="intro">
                 <h1>Linkx</h1>
                 <h2>A minimal, curated link sharing site for friends.</h2>
+                <!-- div including link input and button -->
+                    <div class="addLinkSection">
+                        <form>
+                            <input type="url" id="textbox" placeholder="https://example.com" pattern="https://.*" required>
+                            <button type="submit" id="linkBtn">Add</button>
+                        </form>
+                </div>
             </div>
             
-            <!-- div including link input and button -->
-            <div class="addLinkSection">
-                <input type="text" id="textbox">
-                <button id="linkBtn" onclick="insertText()">Add</button>
-            </div>
     
             <!-- div where added links go -->
             <div id="link-section" class="link-section"></div>

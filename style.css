@@ -19,14 +19,14 @@ p, a {
     font-size: 12px;
 }
 
-.linkx-block {
+.intro{
     border: 1.5px solid rgb(178, 206, 139);
-    padding: 10px 10px 10px 24px;
+    padding: 10px 10px 32px 24px;
     box-shadow: 4px 4px #bbb;
 }
 
 /* input fields */
-input[type=text] {
+input[type=url] {
     width: 300px;
     border-radius: 4px;
     padding: 0.2rem 0.6rem 0.2rem;
@@ -39,7 +39,7 @@ input[type=text] {
     box-shadow: 2px 2px #bbb;
 }
 
-input[type=text]:focus {
+input[type=url]:focus {
     background: rgb(220, 251, 177);
     box-shadow: none;
 }
