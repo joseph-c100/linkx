@@ -20,6 +20,7 @@ p, a {
 }
 
 .intro{
+    position: relative;
     border: 1.5px solid rgb(178, 206, 139);
     padding: 10px 10px 32px 24px;
     box-shadow: 4px 4px #bbb;
@@ -27,7 +28,6 @@ p, a {
 
 /* input fields */
 input[type=url] {
-    width: 300px;
     border-radius: 4px;
     padding: 0.2rem 0.6rem 0.2rem;
     white-space: nowrap;
@@ -44,12 +44,10 @@ input[type=url]:focus {
     box-shadow: none;
 }
 
-#linkBtn {
+#linkBtn, #shareBtn{
     width: fit-content;
     cursor: pointer;
-    margin-top: 8px;
     border-radius: 4px;
-    bottom: 3rem;
     padding: 0.2rem 0.6rem 0.2rem;
     text-align: center;
     white-space: nowrap;
@@ -61,14 +59,25 @@ input[type=url]:focus {
     box-shadow: 2px 2px #bbb;
 }
 
-#linkBtn:hover {
+
+
+#linkBtn:hover, #shareBtn:hover {
     box-shadow: none;
     background: rgb(220, 251, 177);
+}
+
+#shareBtn {
+    /* position absolute relative to .intro div */
+    position: absolute;
+    top: 2em;
+    right: 2em;
 }
 
 .link-section {
     margin-top: 2em;
 }
+
+
 
 .intro h1 {
     margin-bottom: 0.4em;

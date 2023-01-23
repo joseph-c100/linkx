@@ -2,8 +2,11 @@
 
 to do
 
-if add button pressed with no input text then ignore
-
-correct link format check 
+correct link format check xx
 
 add responsiveness for mobile
+
+add Google login 
+
+donation page
+
