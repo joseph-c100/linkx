@@ -6,7 +6,7 @@ correct link format check xx
 
 add responsiveness for mobile
 
-add Google login 
+add Google login or web3 login?
 
-donation page
+donation page - eth tip 
 
