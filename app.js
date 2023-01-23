@@ -18,3 +18,5 @@ function insertText() {
 }
 
 
+// to do
+// if add button pressed with no input text then ignore

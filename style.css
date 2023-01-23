@@ -9,7 +9,10 @@ body {
 
 }
 
-h1 {font-size: 32px;}
+h1 {
+    font-family: Arial Rounded MT Bold;
+    font-size: 32px;
+}
 
 h2 {font-size: 14px;
 font-weight: 400;}
@@ -20,9 +23,33 @@ p, a {
 
 /* input fields */
 input[type=text] {
-    border: 1px solid red;
+    width: 300px;
     border-radius: 4px;
-    padding: 4px;
+    padding: 0.2rem 0.6rem 0.2rem;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000;
+    border: 1.4px solid #000;
+    outline: none;
+    background: #fff;
+    box-shadow: 2px 2px #bbb;
+}
+
+#linkBtn {
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 8px;
+    border-radius: 4px;
+    bottom: 3rem;
+    padding: 0.2rem 0.6rem 0.2rem;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000;
+    border: 1.4px solid #000;
+    outline: none;
+    background: #fff;
+    box-shadow: 2px 2px #bbb;
 }
 
 .link-section {
