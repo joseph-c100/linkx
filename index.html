@@ -10,19 +10,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!-- main div block for whole app -->
+        <div class="linkx-block">
 
-        <div class="intro">
-            <h1>Linkx</h1>
-            <h2>A curated link sharing site for my friends by Joseph C</h2>
+            <div class="intro">
+                <h1>Linkx</h1>
+                <h2>A minimal, curated link sharing site for friends.</h2>
+            </div>
+            
+            <!-- div including link input and button -->
+            <div class="addLinkSection">
+                <input type="text" id="textbox">
+                <button id="linkBtn" onclick="insertText()">Add</button>
+            </div>
+    
+            <!-- div where added links go -->
+            <div id="link-section" class="link-section"></div>
+
         </div>
-
-
-        <input type="text" id="textbox">
-        <button id="linkBtn" onclick="insertText()">Add</button>
-
-        <div id="link-section" class="link-section"></div>
 
         <script src="app.js" async defer></script>
     </body>
 </html>
-

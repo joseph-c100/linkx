@@ -13,10 +13,12 @@ function insertText() {
     var textbox = document.getElementById("textbox");
     var text = textbox.value;
     var linkSection = document.getElementById("link-section");
-    // add textbox text to link section div and a paragraph break
-    linkSection.innerHTML += text + "<br />";
+    // add textbox text to link section div formatted with a tag and a paragraph break
+    linkSection.innerHTML += '<a href="' + text + '">' + text + '</a>' + '<br />';
 }
 
 
 // to do
 // if add button pressed with no input text then ignore
+
+// correct link format check 
