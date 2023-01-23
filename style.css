@@ -9,7 +9,7 @@ body {
 
 }
 
-h1 {font-size: 24px;}
+h1 {font-size: 32px;}
 
 h2 {font-size: 14px;
 font-weight: 400;}
@@ -17,3 +17,15 @@ font-weight: 400;}
 p, a {
     font-size: 12px;
 }
+
+/* input fields */
+input[type=text] {
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.link-section {
+    margin-top: 2em;
+}
+
