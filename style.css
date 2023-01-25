@@ -37,6 +37,17 @@ p, a {
     border-radius: 4px;
 }
 
+.intro h1 {
+    margin-bottom: 0.4em;
+}
+
+.about {
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
+    text-underline-offset: 3px;
+}
+
 /* input fields */
 input[type=url] {
     width: 40vw;
@@ -92,9 +103,6 @@ input[type=url]:focus {
 
 
 
-.intro h1 {
-    margin-bottom: 0.4em;
-}
 
 .addLinkSection {
     margin-top: 1em;
