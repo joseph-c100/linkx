@@ -28,10 +28,14 @@ p, a {
     font-size: 14px;
 }
 
+a {
+
+}
+
 .intro{
     position: relative;
     border: 1.5px solid rgb(71, 71, 71);
-    padding: 10px 10px 32px 24px;
+    padding: 24px;
     box-shadow: 4px 4px #bbb;
     background: white;
     border-radius: 4px;
@@ -39,6 +43,10 @@ p, a {
 
 .intro h1 {
     margin-bottom: 0.4em;
+}
+
+.intro span {
+    font-size: 10px;
 }
 
 .about {
@@ -101,13 +109,15 @@ input[type=url]:focus {
     margin-top: 2em;
 }
 
+.link-section a {
+    background: rgb(238, 237, 237);
+    padding: 4px;
+    line-height: 2.4em;
+}
+
 
 
 
 .addLinkSection {
     margin-top: 1em;
-}
-
-.link-section a {
-    line-height: 2em;
 }
