@@ -28,10 +28,6 @@ p, a {
     font-size: 14px;
 }
 
-a {
-
-}
-
 .intro{
     position: relative;
     border: 1.5px solid rgb(71, 71, 71);
@@ -75,7 +71,7 @@ input[type=url]:focus {
     box-shadow: none;
 }
 
-#linkBtn, #shareBtn{
+#linkBtn, #shareBtn, #titleBox{
     width: fit-content;
     cursor: pointer;
     border-radius: 4px;
@@ -91,8 +87,6 @@ input[type=url]:focus {
     margin-top: 4px;
 }
 
-
-
 #linkBtn:hover, #shareBtn:hover {
     box-shadow: none;
     background: rgb(220, 251, 177);
@@ -105,19 +99,21 @@ input[type=url]:focus {
     right: 2em;
 }
 
-.link-section {
-    margin-top: 2em;
-}
-
 .link-section a {
     background: rgb(238, 237, 237);
     padding: 4px;
     line-height: 2.4em;
 }
 
+#titleBox {
+    font-size: 18px;
+    font-family: Gridular, sans-serif;
+}
 
-
-
-.addLinkSection {
+.addLinkSection, .link-section {
     margin-top: 1em;
+}
+
+.addTitleSection {
+    margin-top: 2em;
 }
