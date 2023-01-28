@@ -5,17 +5,18 @@
     <meta name="description" content="A curated link sharing site for my friends by Joseph C">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <!-- main div block for whole app -->
     <div class="linkx-block">
         <div class="intro">
             <h1>Linkks - Login</h1>
-            <button onclick="signInWithOAuth()">Sign In with Google</button>
+            <button id='loginBtn'>Sign In with Google</button>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script src="app.js" async defer></script>
+    <script type="module" src="./login.js" async defer></script>
 </body>
 </html>

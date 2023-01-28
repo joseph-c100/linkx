@@ -13,12 +13,13 @@ body {
     margin-right: auto;
     margin-top: 4em;
     font-family: Helvetica Neue, sans-serif;
-    background: #f5fff0;
+    background: radial-gradient(circle, rgba(174, 238, 180, 0.342) 0%, rgba(148,187,233,0.17970938375350143) 100%);
 }
 
 h1 {
     font-family: Gridular-Regular;
-    font-size: 32px;
+    font-size: 36px;
+    color: rgb(55, 172, 133);
 }
 
 h2 {font-size: 14px;
@@ -33,12 +34,14 @@ p, a {
     border: 1.5px solid rgb(71, 71, 71);
     padding: 24px;
     box-shadow: 4px 4px #bbb;
-    background: white;
-    border-radius: 4px;
+    background: rgba(236, 253, 254, 0.57);
+    border-radius: 2px;
+    line-height: 26px;
 }
 
 .intro h1 {
     margin-bottom: 0.4em;
+    margin-top: 0.2em;
 }
 
 .intro span {
@@ -108,6 +111,7 @@ input[type=url]:focus {
 #titleBox {
     font-size: 18px;
     font-family: Gridular, sans-serif;
+    margin-bottom: 0.5em;
 }
 
 .addLinkSection, .link-section {
