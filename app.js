@@ -1,11 +1,9 @@
 // import the supabase library and establish the connection with the database
-import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://vmafcgiotxmfbwcqrifn.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+const { createClient } = supabase
+const _supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtYWZjZ2lvdHhtZmJ3Y3FyaWZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQ4OTk4OTcsImV4cCI6MTk5MDQ3NTg5N30.aUV6EOA449unU2Nb8mprEu0_yHafI9_MeZYVL_F-sUw')
 
-
+console.log('Supabase Instance: ', _supabase)
 
 
 // google sign in and sign out - function needs to be called when button is clicked.
