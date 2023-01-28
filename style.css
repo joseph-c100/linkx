@@ -19,7 +19,7 @@ body {
 h1 {
     font-family: Gridular-Regular;
     font-size: 36px;
-    color: rgb(55, 172, 133);
+    color: rgb(77, 119, 243);
 }
 
 h2 {font-size: 14px;
@@ -27,6 +27,7 @@ font-weight: 400;}
 
 p, a {
     font-size: 14px;
+    color: inherit;
 }
 
 .intro{
@@ -36,7 +37,7 @@ p, a {
     box-shadow: 4px 4px #bbb;
     background: rgba(236, 253, 254, 0.57);
     border-radius: 2px;
-    line-height: 26px;
+    line-height: 22px;
 }
 
 .intro h1 {
@@ -49,10 +50,21 @@ p, a {
 }
 
 .about {
-    position: absolute;
-    bottom: 1em;
+    font-family: Gridular, sans-serif;
+    color: rgb(77, 119, 243);
+    position: fixed;
+    top: 1em;
     right: 2em;
     text-underline-offset: 3px;
+}
+
+.about:hover {
+    font-family: Gridular, sans-serif;
+    color: rgb(77, 119, 243);
+    position: fixed;
+    top: 1em;
+    right: 2em;
+    text-underline-offset: 6px;
 }
 
 /* input fields */
@@ -103,8 +115,11 @@ input[type=url]:focus {
 }
 
 .link-section a {
-    background: rgb(238, 237, 237);
-    padding: 4px;
+    background: white;
+    border: solid 1px;
+    color: rgb(32, 52, 110);;
+    border-radius: 2px;
+    padding: 6px;
     line-height: 2.4em;
 }
 
