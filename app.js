@@ -1,4 +1,17 @@
 
+
+// google sign in and sign out
+async function signInWithGoogle() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+    })
+}
+
+async function signout() {
+    const { error } = await supabase.auth.signOut()
+}
+
+
 // adds textbox value i.e. the link to link section when user hits enter
 document.querySelector("#textbox").addEventListener("keyup", event => {
     if(event.key !== "Enter") return; // Use `.key` instead.
