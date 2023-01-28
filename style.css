@@ -113,7 +113,3 @@ input[type=url]:focus {
 .addLinkSection, .link-section {
     margin-top: 1em;
 }
-
-.addTitleSection {
-    margin-top: 2em;
-}

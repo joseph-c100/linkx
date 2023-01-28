@@ -2,15 +2,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtYWZjZ2lvdHhtZmJ3Y3FyaWZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQ4OTk4OTcsImV4cCI6MTk5MDQ3NTg5N30.aUV6EOA449unU2Nb8mprEu0_yHafI9_MeZYVL_F-sUw')
 
-// Insert a row this is using test data
-const { data, error } = await supabase
-    .from('linkks_local')
-    .insert([
-        { list_title: 'test name' , saved_links: 'https://supabase.com/docs/learn/auth-deep-dive/auth-policies'}
-    ]);
 
-// Did it work?
-console.log(data, error);
 
 // google sign in and sign out - function needs to be called when button is clicked.
 async function signInWithGoogle() {
@@ -48,14 +40,31 @@ document.querySelector("form").addEventListener("submit", function(event) {
 
 
 // function that takes value of textbox and inserts it into the div link-section
-function insertText() {
+async function insertText() {
 
     var textbox = document.getElementById("textbox");
     var text = textbox.value;
     var linkSection = document.getElementById("link-section");
 
+    var listTitle = document.getElementById("titleBox");
+    var listTitleValue = listTitle.value;
+
     // add textbox text to link section div formatted with a tag and a paragraph break
     linkSection.innerHTML += '<a href="' + text + '">' + text + '</a>' + '<br />';
+
+    // --------------------------------------------------------
+    // database functionality
+
+    // inserts added link and list title to database under saved_links
+    const { data, error } = await supabase
+    .from('linkks_local')
+    .insert([
+        { list_title: listTitleValue, saved_links: text}
+    ]);
+
+    // Did it work?
+    console.log(data, error);
+
 }
 
 
