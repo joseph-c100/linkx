@@ -1,6 +1,6 @@
 
 
-// google sign in and sign out
+// google sign in and sign out - function needs to be called when button is clicked.
 async function signInWithGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
