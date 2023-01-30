@@ -69,7 +69,7 @@ p, a {
 
 /* input fields */
 input[type=url] {
-    width: 40vw;
+    width: 50vw;
     border-radius: 4px;
     padding: 0.2rem 0.6rem 0.2rem;
     white-space: nowrap;
@@ -131,4 +131,14 @@ input[type=url]:focus {
 
 .addLinkSection, .link-section {
     margin-top: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        max-width: 95vw;
+    }
+
+    #titleBox {
+        max-width: 60vw;
+    }
 }
