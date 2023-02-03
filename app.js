@@ -14,7 +14,6 @@ document.getElementById('loginBtn').addEventListener("click", async function sig
     });
     console.log(data,error)
     if (!error) {
-        window.location.href = 'app.html'
         currentUserEmail = data.email;
         console.log(currentUserEmail);
     } else {
