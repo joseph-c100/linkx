@@ -49,6 +49,8 @@ async function shareLinks() {
     const linkSection = document.getElementById("link-section");
     const links = [];
 
+    const UserEmail = currentUserEmail
+
     // for loop runs through linkSection picking out each link element and adds it to array links []
     for (let i = 0; i < linkSection.children.length; i++) {
         const child = linkSection.children[i];
@@ -68,7 +70,7 @@ const { data, error } = await supabase
     .insert([
         { list_title: listTitleValue, 
         links_array: [links], 
-        user_email: currentUserEmail }
+        user_email: UserEmail }
         ]); 
 
     // Did it work?
