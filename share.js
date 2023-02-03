@@ -17,7 +17,8 @@ async function getEmail() {
         emailRedirectTo: 'https://linkks.netlify.app/',
         // later redirects to share page
     },
-    })
+    });
+    shareLinks();
 }
 
 // document.getElementById('logoutBtn').addEventListener("click", async function signout() {
@@ -67,7 +68,6 @@ async function shareLinks() {
 
     // when share button is clicked run ShareLinks function 
     document.querySelector("#shareBtn").addEventListener("click", function(event) {
-        shareLinks();
         getEmail();
     });
 
