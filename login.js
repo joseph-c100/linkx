@@ -4,24 +4,25 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 
 // ---------------------------------------------
 
-// // google sign in and sign out - function called when login button is clicked.
+// ---------------------------------------------
 
-// document.getElementById('loginBtn').addEventListener("click", async function signInWithOAuth() {
-//     const { data, error } = await supabase.auth.signInWithOAuth({
-//         provider: 'google',
-//     });
-//     console.log(data,error)
+// Supabase Magic Link sign in and sign out
 
-//     if (!error) {
-//         const currentUserEmail = data.email;
-//         console.log(currentUserEmail);
-//     } else {
-//         console.error(error);
-//     }
-// });
+const currentUserEmail = "";
 
-// document.getElementById('logoutBtn').addEventListener("click",
-// async function signout() {
-//     const { error } = await supabase.auth.signOut()
-// })
+document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
+    const email = prompt("Enter your email to receive the Magic Link:");
+    const { data, error } = await supabase.auth.signInWithOtp({
+    email: email,
+    options: {
+        emailRedirectTo: 'https://linkks.netlify.app/app.html',
+    },
+    })
+})
+
+document.getElementById('logoutBtn').addEventListener("click", async function signout() {
+    const { error } = await supabase.auth.signOut();
+});
+
+// ----------------------------------
 

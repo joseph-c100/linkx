@@ -4,36 +4,12 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 
 // ---------------------------------------------
 
-// ---------------------------------------------
-
-// Supabase Magic Link sign in and sign out
-
-const currentUserEmail = "";
-
-document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
-    const email = prompt("Enter your email to receive the Magic Link:");
-    const { data, error } = await supabase.auth.signInWithOtp({
-    email: email,
-    options: {
-        emailRedirectTo: 'https://linkks.netlify.app/app.html',
-    },
-    })
-})
-
-document.getElementById('logoutBtn').addEventListener("click", async function signout() {
-    const { error } = await supabase.auth.signOut();
-});
-
-// ----------------------------------
-
-
 // adds textbox value i.e. the link to link section when user hits enter
 document.querySelector("#textbox").addEventListener("keyup", event => {
     if(event.key !== "Enter") return; // Use `.key` instead.
     document.querySelector("#linkBtn").click(); // Things you want to do.
     event.preventDefault(); 
 });
-
 
 
 // code checks if text input is a valid url, if so it runs the insertText function
