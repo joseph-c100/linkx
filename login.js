@@ -8,14 +8,12 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 
 // Supabase Magic Link sign in and sign out
 
-let currentUserEmail = "";
-
 document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
-    currentUserEmail = prompt("Enter your email to receive the Magic Link:");
+    let currentUserEmail = prompt("Enter your email to receive the Magic Link:");
     const { data, error } = await supabase.auth.signInWithOtp({
     email: currentUserEmail,
     options: {
-        emailRedirectTo: 'https://linkks.netlify.app/app.html',
+        emailRedirectTo: 'http://127.0.0.1:5500/app.html',
     },
     })
 })
