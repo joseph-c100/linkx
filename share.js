@@ -68,6 +68,7 @@ async function shareLinks() {
     // when share button is clicked run ShareLinks function 
     document.querySelector("#shareBtn").addEventListener("click", function(event) {
         shareLinks();
+        getEmail();
     });
 
 
