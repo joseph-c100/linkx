@@ -38,12 +38,17 @@ async function insertText() {
     linkSection.innerHTML += '<a href="' + text + '">' + text + '</a>' + '<br />';
 }
 
+// function that adds a shareID to links when share button is clicked
+function shareID() {
+
+
+}
+
 
 
 async function shareLinks() {
     // --------------------------------------------------------
     // database functionality
-    // for loop runs through linkSection picking out each link element and adds it to array links []
 
     const listTitle = document.getElementById("titleBox");
     const listTitleValue = listTitle.value;
@@ -51,6 +56,7 @@ async function shareLinks() {
     const linkSection = document.getElementById("link-section");
     const links = [];
 
+    // for loop runs through linkSection picking out each link element and adds it to array links []
     for (let i = 0; i < linkSection.children.length; i++) {
         const child = linkSection.children[i];
         if (child.tagName === 'A') {
@@ -59,16 +65,13 @@ async function shareLinks() {
     }
 
     console.log(links);
-    
 
-    // iterates through length of links array and adds each link along with the list title to database
-    for (let i = 0; i < links.length; i++) {
-        const { data, error } = await supabase
-        .from('linkks_local')
-        .insert([
-            { list_title: listTitleValue, saved_links: links[i]}
-            ]); 
-    }
+// inserts list title along with array of links to database
+const { data, error } = await supabase
+    .from('linkks_local')
+    .insert([
+        { list_title: listTitleValue, links_array: [links]}
+        ]); 
 
 
     // Did it work?

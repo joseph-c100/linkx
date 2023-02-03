@@ -14,7 +14,7 @@ async function signInWithOAuth() {
         provider: 'google',
 })
 // redirect user to main app page
-window.location.href = "app.html";
+// window.location.href = "app.html";
 }
 
 async function signout() {
