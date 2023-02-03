@@ -7,7 +7,7 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 let currentUserEmail;
 
 var pathname = window.location.pathname;
-if (pathname != 'index.html') {
+if (pathname = 'index.html') {
     document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
         currentUserEmail = prompt("Enter your email to receive the Magic Link:");
         const { data, error } = await supabase.auth.signInWithOtp({
@@ -18,8 +18,6 @@ if (pathname != 'index.html') {
         })
     })
 }
-
-
 
 // document.getElementById('logoutBtn').addEventListener("click", async function signout() {
 //     const { error } = await supabase.auth.signOut();
