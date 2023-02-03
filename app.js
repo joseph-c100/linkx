@@ -34,25 +34,52 @@ async function insertText() {
     var text = textbox.value;
     var linkSection = document.getElementById("link-section");
 
-    var listTitle = document.getElementById("titleBox");
-    var listTitleValue = listTitle.value;
-
     // add textbox text to link section div formatted with a tag and a paragraph break
     linkSection.innerHTML += '<a href="' + text + '">' + text + '</a>' + '<br />';
+}
 
+
+
+async function shareLinks() {
     // --------------------------------------------------------
     // database functionality
+    // for loop runs through linkSection picking out each link element and adds it to array links []
 
-    // inserts added link and list title to database under saved_links
-    const { data, error } = await supabase
-    .from('linkks_local')
-    .insert([
-        { list_title: listTitleValue, saved_links: text}
-    ]);
+    const listTitle = document.getElementById("titleBox");
+    const listTitleValue = listTitle.value;
+
+    const linkSection = document.getElementById("link-section");
+    const links = [];
+
+    for (let i = 0; i < linkSection.children.length; i++) {
+        const child = linkSection.children[i];
+        if (child.tagName === 'A') {
+        links.push(child.href);
+        }
+    }
+
+    console.log(links);
+    
+
+    // iterates through length of links array and adds each link along with the list title to database
+    for (let i = 0; i < links.length; i++) {
+        const { data, error } = await supabase
+        .from('linkks_local')
+        .insert([
+            { list_title: listTitleValue, saved_links: links[i]}
+            ]); 
+    }
+
 
     // Did it work?
     console.log(data, error);
 
+    // needs to take each added link in link-section and add to database along with listTitle
+    // as separate rows - may require for loop
 }
 
-
+// when share button is clicked run ShareLinks function 
+document.querySelector("#shareBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    shareLinks();
+});

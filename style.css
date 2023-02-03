@@ -14,6 +14,8 @@ body {
     margin-right: auto;
     margin-top: 4em;
     font-family: Helvetica Neue, sans-serif;
+    font-size: 14px;
+    color: inherit;
     background: radial-gradient(circle, rgba(174, 238, 180, 0.342) 0%, rgba(148,187,233,0.17970938375350143) 100%);
 }
 
@@ -21,15 +23,12 @@ h1 {
     font-family: Gridular-Regular;
     font-size: 36px;
     color: rgb(77, 119, 243);
+    margin-bottom: 0.4em;
+    margin-top: 0.2em;
 }
 
 h2 {font-size: 14px;
 font-weight: 400;}
-
-p, a {
-    font-size: 14px;
-    color: inherit;
-}
 
 .intro{
     position: relative;
@@ -38,11 +37,6 @@ p, a {
     box-shadow: 4px 4px #bbb;
     background: rgba(236, 253, 254, 0.57);
     border-radius: 2px;
-}
-
-.intro h1 {
-    margin-bottom: 0.4em;
-    margin-top: 0.2em;
 }
 
 .intro span {
