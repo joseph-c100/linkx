@@ -13,7 +13,7 @@ document.getElementById('loginBtn').addEventListener("click", async function sig
     const { data, error } = await supabase.auth.signInWithOtp({
     email: currentUserEmail,
     options: {
-        emailRedirectTo: 'http://127.0.0.1:5500/app.html',
+        emailRedirectTo: 'https://linkks.netlify.app/app.html',
     },
     })
 })
@@ -24,3 +24,4 @@ document.getElementById('logoutBtn').addEventListener("click", async function si
 
 // ----------------------------------
 
+export { currentUserEmail };
