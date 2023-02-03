@@ -4,6 +4,32 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 
 // ---------------------------------------------
 
+// google sign in and sign out - function called when login button is clicked.
+
+const currentUserEmail = "";
+
+document.getElementById('loginBtn').addEventListener("click", async function signInWithOAuth() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+    });
+    console.log(data,error)
+
+    if (!error) {
+        currentUserEmail = data.email;
+        console.log(currentUserEmail);
+    } else {
+        console.error(error);
+    }
+});
+
+document.getElementById('logoutBtn').addEventListener("click",
+async function signout() {
+    const { error } = await supabase.auth.signOut()
+})
+
+// ----------------------------------
+
+
 // adds textbox value i.e. the link to link section when user hits enter
 document.querySelector("#textbox").addEventListener("keyup", event => {
     if(event.key !== "Enter") return; // Use `.key` instead.
@@ -74,13 +100,11 @@ const { data, error } = await supabase
         }
         ]); 
 
-
     // Did it work?
     console.log(data, error);
 }
 
 // when share button is clicked run ShareLinks function 
 document.querySelector("#shareBtn").addEventListener("click", function(event) {
-    event.preventDefault();
     shareLinks();
 });

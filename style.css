@@ -35,7 +35,7 @@ font-weight: 400;}
     border: 1.5px solid rgb(71, 71, 71);
     padding: 24px;
     box-shadow: 4px 4px #bbb;
-    background: rgba(236, 253, 254, 0.57);
+    background: rgba(236, 254, 244, 0.872);
     border-radius: 2px;
 }
 
@@ -80,7 +80,7 @@ input[type=url]:focus {
     box-shadow: none;
 }
 
-#linkBtn, #shareBtn, #titleBox{
+#linkBtn, #shareBtn, #titleBox, #loginBtn{
     width: fit-content;
     cursor: pointer;
     border-radius: 4px;
@@ -96,7 +96,7 @@ input[type=url]:focus {
     margin-top: 4px;
 }
 
-#linkBtn:hover, #shareBtn:hover {
+#linkBtn:hover, #shareBtn:hover, #loginBtn:hover {
     box-shadow: none;
     background: rgb(220, 251, 177);
 }
