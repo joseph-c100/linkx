@@ -11,6 +11,7 @@ const currentUserEmail = "";
 document.getElementById('loginBtn').addEventListener("click", async function signInWithOAuth() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
+        redirectTo: `${window.location.origin}/app.html`
     });
     console.log(data,error)
     if (!error) {
