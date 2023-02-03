@@ -10,10 +10,11 @@ const currentUserEmail = "";
 
 document.getElementById('loginBtn').addEventListener("click", async function signInWithOAuth() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-    });
+        provider: 'google'
+    }, {
+        redirectTo: 'https://linkks.netlify.app/app.html'
+    })
     console.log(data,error)
-
     if (!error) {
         currentUserEmail = data.email;
         console.log(currentUserEmail);
@@ -22,10 +23,9 @@ document.getElementById('loginBtn').addEventListener("click", async function sig
     }
 });
 
-document.getElementById('logoutBtn').addEventListener("click",
-async function signout() {
+document.getElementById('logoutBtn').addEventListener("click", async function signout() {
     const { error } = await supabase.auth.signOut()
-})
+});
 
 // ----------------------------------
 
@@ -108,3 +108,4 @@ const { data, error } = await supabase
 document.querySelector("#shareBtn").addEventListener("click", function(event) {
     shareLinks();
 });
+
