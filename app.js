@@ -68,7 +68,7 @@ const { data, error } = await supabase
     .insert([
         { list_title: listTitleValue, 
         links_array: [links], 
-        user_email: currentUserEmail}
+        user_email: currentUserEmail }
         ]); 
 
     // Did it work?

@@ -10,7 +10,7 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 
 export let currentUserEmail;
 
-
+// function runs once page has fully loaded
 window.onload = function() {
 
     document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
