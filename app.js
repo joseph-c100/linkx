@@ -61,16 +61,13 @@ async function shareLinks() {
 // ------------------------------------------------
 
 
-
-
 // inserts list title along with links array to database
 const { data, error } = await supabase
     .from('linkks_local')
     .insert([
         { list_title: listTitleValue, 
-        links_array: [links],    
-        user_email: currentUserEmail
-        }
+        links_array: [links],
+        user_email: currentUserEmail}
         ]); 
 
     // Did it work?
