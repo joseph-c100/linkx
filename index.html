@@ -14,18 +14,29 @@
         <div class="linkx-block">
 
             <div class="intro">
-                <h1>What's Linkks?</h1>
-                <p>Curating and sharing links with others is what Linkks is about.</p>
-                <p>For example, send a series of links to articles, videos, essays and websites about a 
-                topic you're interested in to a friend.</p>
-                <p>Give it a title then click share.</p>
-                <p>Made with love by Joseph C</p>
-                <form">
-                    <button type="submit" id="loginBtn">Login</button>
-                </form>
+                <h1>Linkks <span>V1.0</span></h1>
+                <h2>A minimal link sharing site.</h2>
+                <!-- div including link input and button -->
+                    <div class="addLinkSection">
+                        <form>
+                            <input type="text" id="titleBox" placeholder="Title here">
+                            <input type="url" id="textbox" placeholder="https://example.com" pattern="https://.*" required>
+                            <button type="submit" id="linkBtn">Add</button>
+                        </form>
+                    </div>
+                <div id="logoutBtn"><a href="index.html">Logout</a></div>
+                <button id="shareBtn">Share</button>  
+                
             </div>
-        </div>
+    
+            <!-- div where added links go -->
+            <div id="link-section" class="link-section"></div>
 
-        <script type="module" src="login.js" async defer></script>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="./app.js" async defer></script>
+        <script type="module" src="./share.js" async defer></script>
+
     </body>
 </html>

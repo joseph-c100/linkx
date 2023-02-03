@@ -2,8 +2,6 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtYWZjZ2lvdHhtZmJ3Y3FyaWZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQ4OTk4OTcsImV4cCI6MTk5MDQ3NTg5N30.aUV6EOA449unU2Nb8mprEu0_yHafI9_MeZYVL_F-sUw')
 // ---------------------------------------------
-import { currentUserEmail } from './login.js';
-
 
 // adds textbox value i.e. the link to link section when user hits enter
 document.querySelector("#textbox").addEventListener("keyup", event => {
@@ -37,48 +35,4 @@ async function insertText() {
     // add textbox text to link section div formatted with a tag and a paragraph break
     linkSection.innerHTML += '<a href="' + text + '">' + text + '</a>' + '<br />';
 }
-
-
-async function shareLinks() {
-    // --------------------------------------------------------
-    // database functionality
-
-    const listTitle = document.getElementById("titleBox");
-    const listTitleValue = listTitle.value;
-
-    const linkSection = document.getElementById("link-section");
-    const links = [];
-
-    const UserEmail = currentUserEmail
-
-    // for loop runs through linkSection picking out each link element and adds it to array links []
-    for (let i = 0; i < linkSection.children.length; i++) {
-        const child = linkSection.children[i];
-        if (child.tagName === 'A') {
-        links.push(child.href);
-        }
-    }
-
-    console.log(links);
-
-// ------------------------------------------------
-
-
-// inserts list title along with links array to database
-const { data, error } = await supabase
-    .from('linkks_local')
-    .insert([
-        { list_title: listTitleValue, 
-        links_array: [links], 
-        user_email: UserEmail }
-        ]); 
-
-    // Did it work?
-    console.log(data, error);
-}
-
-// when share button is clicked run ShareLinks function 
-document.querySelector("#shareBtn").addEventListener("click", function(event) {
-    shareLinks();
-});
 
