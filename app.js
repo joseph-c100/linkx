@@ -10,12 +10,11 @@ const currentUserEmail = "";
 
 document.getElementById('loginBtn').addEventListener("click", async function signInWithOAuth() {
     const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google'
-    }, {
-        redirectTo: 'https://linkks.netlify.app/app.html'
-    })
+        provider: 'google',
+    });
     console.log(data,error)
     if (!error) {
+        window.location.href = 'app.html'
         currentUserEmail = data.email;
         console.log(currentUserEmail);
     } else {
