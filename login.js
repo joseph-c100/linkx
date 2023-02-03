@@ -5,18 +5,17 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 // ---------------------------------------------
 
 // google sign in and sign out - function called when login button is clicked.
-document.getElementById('loginBtn').addEventListener("click", signInWithOAuth())
-document.getElementById('logoutBtn').addEventListener("click", signout())
 
-
+document.getElementById('loginBtn').addEventListener("click", 
 async function signInWithOAuth() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
 })
 // redirect user to main app page
 // window.location.href = "app.html";
-}
+})
 
+document.getElementById('logoutBtn').addEventListener("click",
 async function signout() {
     const { error } = await supabase.auth.signOut()
-}
+})

@@ -66,7 +66,12 @@ async function shareLinks() {
 
     console.log(links);
 
-// inserts list title along with array of links to database
+// ------------------------------------------------
+
+
+
+
+// inserts list title along with links array to database
 const { data, error } = await supabase
     .from('linkks_local')
     .insert([
@@ -76,9 +81,6 @@ const { data, error } = await supabase
 
     // Did it work?
     console.log(data, error);
-
-    // needs to take each added link in link-section and add to database along with listTitle
-    // as separate rows - may require for loop
 }
 
 // when share button is clicked run ShareLinks function 
