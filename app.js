@@ -6,19 +6,24 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 // Supabase Magic Link sign in and sign out
 let currentUserEmail;
 
-document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
-    currentUserEmail = prompt("Enter your email to receive the Magic Link:");
-    const { data, error } = await supabase.auth.signInWithOtp({
-    email: currentUserEmail,
-    options: {
-        emailRedirectTo: 'https://linkks.netlify.app/app.html',
-    },
+var pathname = window.location.pathname;
+if (pathname != 'index.html') {
+    document.getElementById('loginBtn').addEventListener("click", async function signInWithEmail() {
+        currentUserEmail = prompt("Enter your email to receive the Magic Link:");
+        const { data, error } = await supabase.auth.signInWithOtp({
+        email: currentUserEmail,
+        options: {
+            emailRedirectTo: 'https://linkks.netlify.app/app.html',
+        },
+        })
     })
-})
+}
 
-document.getElementById('logoutBtn').addEventListener("click", async function signout() {
-    const { error } = await supabase.auth.signOut();
-});
+
+
+// document.getElementById('logoutBtn').addEventListener("click", async function signout() {
+//     const { error } = await supabase.auth.signOut();
+// });
 
 // ----------------------------------
 
