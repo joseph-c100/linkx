@@ -6,14 +6,18 @@ const supabase = createClient('https://vmafcgiotxmfbwcqrifn.supabase.co', 'eyJhb
 
 // google sign in and sign out - function called when login button is clicked.
 
-document.getElementById('loginBtn').addEventListener("click", 
-async function signInWithOAuth() {
+document.getElementById('loginBtn').addEventListener("click", async function signInWithOAuth() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
-})
-// redirect user to main app page
-// window.location.href = "app.html";
-})
+    });
+
+    if (!error) {
+        const currentUserEmail = data.email;
+        console.log(currentUserEmail);
+    } else {
+        console.error(error);
+    }
+});
 
 document.getElementById('logoutBtn').addEventListener("click",
 async function signout() {

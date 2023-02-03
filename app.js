@@ -38,13 +38,6 @@ async function insertText() {
     linkSection.innerHTML += '<a href="' + text + '">' + text + '</a>' + '<br />';
 }
 
-// function that adds a shareID to links when share button is clicked
-function shareID() {
-
-
-}
-
-
 
 async function shareLinks() {
     // --------------------------------------------------------
@@ -75,7 +68,10 @@ async function shareLinks() {
 const { data, error } = await supabase
     .from('linkks_local')
     .insert([
-        { list_title: listTitleValue, links_array: [links]}
+        { list_title: listTitleValue, 
+        links_array: [links],    
+        user_email: currentUserEmail
+        }
         ]); 
 
 
