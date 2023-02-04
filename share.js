@@ -18,6 +18,7 @@ async function getEmail() {
         // later redirects to share page
     },
     });
+    // function waits for user to input email before inserting data into database
     shareLinks();
 }
 
@@ -61,15 +62,15 @@ async function shareLinks() {
 
         // Did it work?
         console.log(data, error);
-    }
+}
 
 
 
 
-    // when share button is clicked run ShareLinks function 
-    document.querySelector("#shareBtn").addEventListener("click", function(event) {
-        getEmail();
-    });
+// when share button is clicked run ShareLinks function 
+document.querySelector("#shareBtn").addEventListener("click", function(event) {
+    getEmail();
+});
 
 
 
