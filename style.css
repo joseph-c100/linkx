@@ -32,8 +32,11 @@ h2 {font-size: 18px;
     font-family: Gridular-Regular;
     font-weight: 400;}
 
+.linkx-block {
+    margin-top: 8em;
+}
+
 .intro{
-    margin-top: 4em;
     position: relative;
     border: 1px solid rgb(71, 71, 71);
     padding: 24px;
@@ -52,7 +55,7 @@ h2 {font-size: 18px;
     font-size: 10px;
 }
 
-#logoutBtn {
+#pageBtn {
     font-family: Gridular, sans-serif;
     color: rgb(77, 119, 243);
     position: fixed;
@@ -73,7 +76,7 @@ h2 {font-size: 18px;
 /* input fields */
 input[type=url] {
     width: 40vw;
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0.4rem 0.6rem 0.4rem;
     white-space: nowrap;
     text-decoration: none;
@@ -90,11 +93,8 @@ input[type=url]:focus {
 }
 
 input[type=email] {
-    font-size: 16px;
-    width: 30vw;
-    border-radius: 4px;
-    padding: 0.2rem 0.6rem 0.2rem;
-    margin-bottom: 0.6em;
+    border-radius: 2px;
+    padding: 0.4rem 0.6rem 0.4rem;
     white-space: nowrap;
     text-decoration: none;
     color: #000;
@@ -126,10 +126,6 @@ input[type=email] {
 }
 
 #shareBtn {
-    /* position absolute relative to .intro div */
-    position: absolute;
-    top: 1em;
-    right: 2em;
     background: rgb(220, 251, 177);
 }
 
@@ -146,6 +142,20 @@ input[type=email] {
     font-size: 18px;
     font-family: Gridular, sans-serif;
     margin-bottom: 0.5em;
+}
+
+.shareBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 40vw;
+    margin-top: 1em;
+    position: relative;
+    border: 1px solid rgb(71, 71, 71);
+    padding: 22px;
+    box-shadow: 4px 4px rgb(77, 119, 243);
+    /* background: rgba(255, 255, 255, 0.754); */
+    border-radius: 2px;
 }
 
 .addLinkSection, .link-section {
